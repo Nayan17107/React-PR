@@ -1,0 +1,43 @@
+.causes{
+	padding: 80px 0;
+}
+.causes-title{
+	text-align: center;
+	padding-bottom: 40px;
+}
+.causes-title img{
+	padding: 10px 0;
+}
+.cause-content{
+	background-color: #f1f1f1;
+	padding: 40px;
+}
+.cause-content h3{
+	font-size: 15px;
+	padding-bottom: 14px;
+	text-align: center;
+}
+.cause-content p{
+	font-size: 14px;
+}
+.cause-content:hover{
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.cause-item img{
+	display: block;
+}
+.cause-item a{
+	color: #555555;
+	border: 1px solid #555555;
+	border-radius: 3px;
+}
+.cause-item a:hover{
+	background-color: #0aaaa0;
+	color: #ffffff;
+}
+.cause-item ul{
+	padding-top: 20px;
+}
+.cause-item{
+	margin-right:30px;
+}

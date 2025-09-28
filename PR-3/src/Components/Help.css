@@ -1,0 +1,43 @@
+.helps{
+	background-image: url(/help-bg.webp);
+	padding: 100px 0;
+	color: #ffffff;
+	background-position: center;
+	background-size: cover;
+}
+.help-title h2{
+	margin-bottom: 20px;
+}
+.help-title p{
+	font-size: 14px;
+	max-width: 900px ;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+.help-item ul:last-child a:hover{
+	background-color: #0aaaa0;
+}
+.help-item a{
+	color: #ffffff;
+}
+.help-item ul i{
+	font-size: 40px;
+	border: 1px solid #0aaaa0;
+	border-radius: 4px;
+	margin-right: 30px;
+	padding: 8px;
+}
+.help-item nav h3{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+.help-item nav p{
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.help-item ul li:last-child a{
+	border: 1px solid #ffffff;
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 14px;
+}					

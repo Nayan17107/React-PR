@@ -1,0 +1,55 @@
+.gallarys{
+	padding: 100px 0;
+}
+.gallary-title{
+	max-width: 700px ;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.gallary-title a:hover{
+	color: #0aaaa0;
+}
+.gallary-title img{
+	margin: 10px 0;
+}
+.gallary-title p{
+	font-size: 14px;
+	margin-bottom: 40px;
+}
+.gallary-title a{
+	color: #000000;
+}
+.gallary-title ul{
+	font-weight: 600;
+}
+.gallary-title ul li:first-child a{
+	color: #0aaaa0;	
+}
+.gallary-item{
+	position: relative;
+}
+.gallary-item img{
+	padding: 20px;
+}
+.gallary-hover{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	background-color: rgba(0, 150, 150, 0.7);
+	color: #ffffff;
+	width: 82%;
+	height: 82%;
+	opacity: 0;
+}
+.gallary-hover i{
+	color: #ffffff;
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+.gallary-hover ol li{
+	color: #ffffff;
+	font-weight: 600;
+}
+.gallary-item:hover .gallary-hover{
+	opacity: 1;
+}
