@@ -1,5 +1,7 @@
 import './App.css'
-import Employee from './Components/Employee'
+import Employee from './Components/Employee';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 
