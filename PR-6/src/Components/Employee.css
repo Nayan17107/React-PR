@@ -1,0 +1,9 @@
+.placeholder-red::placeholder {
+    color: #dc3545 !important;
+    opacity: 1;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
