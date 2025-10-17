@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Col, Form, Row, Button, InputGroup, Card } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Col, Form, Row, Button, InputGroup, Card, Container } from 'react-bootstrap';
 import uniqueId from 'generate-unique-id';
-import './Employee.css'; 
+import './Employee.css';
 
 function Employee() {
     const handalstorage = () => {
@@ -15,24 +15,24 @@ function Employee() {
         email: "",
         address: "",
         phoneno: ""
-    }
+    };
 
     const [inputForm, setinputForm] = useState(initialState);
     const [inputErr, setinputErr] = useState({});
     const [storage, setStorage] = useState(handalstorage());
-    const [edit, setedit] = useState(false)
+    const [edit, setedit] = useState(false);
 
     useEffect(() => {
         localStorage.setItem('Employee', JSON.stringify(storage));
-    }, [storage])
+    }, [storage]);
 
     const handalchang = (e) => {
-        const { name, value } = e.target
+        const { name, value } = e.target;
         setinputForm({
             ...inputForm,
-            [name]: value
-        })
-    }
+            [name]: value,
+        });
+    };
 
     const handalsubmit = (e) => {
         e.preventDefault();
@@ -60,7 +60,7 @@ function Employee() {
     };
 
     const handalErros = () => {
-        let errors = {}
+        let errors = {};
 
         if (inputForm.firstName === "") errors.nameErr = "Enter Your Name";
         if (inputForm.lastName === "") errors.lastNameErr = "Enter Last Name";
@@ -68,14 +68,14 @@ function Employee() {
         if (inputForm.address === "") errors.addressErr = "Enter Your Address";
         if (inputForm.phoneno === "") errors.phonenoErr = "Enter Your No";
 
-        setinputErr(errors)
-        return Object.keys(errors).length === 0
-    }
+        setinputErr(errors);
+        return Object.keys(errors).length === 0;
+    };
 
     const handalDelete = (id) => {
-        let updateData = storage.filter((ele) => ele.id !== id)
-        setStorage(updateData)
-    }
+        let updateData = storage.filter((ele) => ele.id !== id);
+        setStorage(updateData);
+    };
 
     const handalEdit = (id) => {
         const findeingdata = storage.find((ele) => ele.id === id);
@@ -85,101 +85,102 @@ function Employee() {
 
     return (
         <>
-            <h1>Employee Management Form</h1><br />
+            <Container fluid className="employee-bg">
+                <h1 className="text-center mb-4 gradient-heading">Add Employee Portal</h1>
 
-            <div className="justify-content-center align-items-center">
+                <div className="form-container mx-auto p-4">
+                    <Form onSubmit={handalsubmit}>
+                        <Form.Label className="fw-bold text-light">First Name :</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                type="text"
+                                name="firstName"
+                                placeholder={inputErr.nameErr ? inputErr.nameErr : "First Name"}
+                                className={inputErr.nameErr ? "is-invalid placeholder-red" : ""}
+                                onChange={handalchang}
+                                value={inputForm.firstName}
+                            />
+                        </InputGroup><br />
 
-                <Form onSubmit={handalsubmit}>
+                        <Form.Label className="fw-bold text-light">Last Name :</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                type="text"
+                                name="lastName"
+                                placeholder={inputErr.lastNameErr ? inputErr.lastNameErr : "Last Name"}
+                                className={inputErr.lastNameErr ? "is-invalid placeholder-red" : ""}
+                                onChange={handalchang}
+                                value={inputForm.lastName}
+                            />
+                        </InputGroup><br />
 
-                    <Form.Label className="fw-bold">First Name :-</Form.Label>
-                    <InputGroup>
+                        <Form.Label className="fw-bold text-light">Email :</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                type="email"
+                                name="email"
+                                placeholder={inputErr.emailErr ? inputErr.emailErr : "Email"}
+                                className={inputErr.emailErr ? "is-invalid placeholder-red" : ""}
+                                onChange={handalchang}
+                                value={inputForm.email}
+                            />
+                        </InputGroup><br />
+
+                        <Form.Label className="fw-bold text-light">Address :</Form.Label>
                         <Form.Control
-                            type="text"
-                            name="firstName"
-                            placeholder={inputErr.nameErr ? inputErr.nameErr : "First Name"}
-                            className={inputErr.nameErr ? "is-invalid placeholder-red" : ""}
+                            as="textarea"
+                            rows={4}
+                            name="address"
+                            placeholder={inputErr.addressErr ? inputErr.addressErr : "Enter your Address here..."}
+                            className={inputErr.addressErr ? "is-invalid placeholder-red" : ""}
                             onChange={handalchang}
-                            value={inputForm.firstName}
-                        />
-                    </InputGroup><br />
+                            value={inputForm.address}
+                        /><br />
 
-                    <Form.Label className="fw-bold">Last Name :-</Form.Label>
-                    <InputGroup>
-                        <Form.Control
-                            type="text"
-                            name="lastName"
-                            placeholder={inputErr.lastNameErr ? inputErr.lastNameErr : "Last Name"}
-                            className={inputErr.lastNameErr ? "is-invalid placeholder-red" : ""}
-                            onChange={handalchang}
-                            value={inputForm.lastName}
-                        />
-                    </InputGroup><br />
+                        <Form.Label className="fw-bold text-light">Phone No :</Form.Label>
+                        <InputGroup>
+                            <Form.Control
+                                type="text"
+                                name="phoneno"
+                                placeholder={inputErr.phonenoErr ? inputErr.phonenoErr : "Phone No"}
+                                className={inputErr.phonenoErr ? "is-invalid placeholder-red" : ""}
+                                onChange={handalchang}
+                                value={inputForm.phoneno}
+                            />
+                        </InputGroup><br />
 
-                    <Form.Label className="fw-bold">Email :-</Form.Label>
-                    <InputGroup>
-                        <Form.Control
-                            type="email"
-                            name="email"
-                            placeholder={inputErr.emailErr ? inputErr.emailErr : "Email"}
-                            className={inputErr.emailErr ? "is-invalid placeholder-red" : ""}
-                            onChange={handalchang}
-                            value={inputForm.email}
-                        />
-                    </InputGroup><br />
+                        <Button variant={edit ? "warning" : "info"} type="submit" className="w-100 glow-btn">
+                            {edit ? "Update Employee" : "Add Employee"}
+                        </Button>
+                    </Form>
+                </div>
 
-                    <Form.Label className="fw-bold">Address :-</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={4}
-                        name="address"
-                        placeholder={inputErr.addressErr ? inputErr.addressErr : "Enter your Address here..."}
-                        className={inputErr.addressErr ? "is-invalid placeholder-red" : ""}
-                        onChange={handalchang}
-                        value={inputForm.address}
-                    /><br />
-
-                    <Form.Label className="fw-bold">Phone No :-</Form.Label>
-                    <InputGroup>
-                        <Form.Control
-                            type="text"
-                            name="phoneno"
-                            placeholder={inputErr.phonenoErr ? inputErr.phonenoErr : "Phone No"}
-                            className={inputErr.phonenoErr ? "is-invalid placeholder-red" : ""}
-                            onChange={handalchang}
-                            value={inputForm.phoneno}
-                        />
-                    </InputGroup><br />
-
-                    <Button variant={edit ? "warning" : "success"} type="submit">
-                        {edit ? "Update Employee" : "Add Employee"}
-                    </Button>
-                </Form>
-
-                <Row className="mt-5">
+                <Row className="mt-5 employee-display-container">
                     {storage.length > 0 ? (
                         storage.map((emp) => (
-                            <Col key={emp.id} xs={12} sm={6} md={4} className="mb-3">
-                                <Card className="shadow-sm">
+                            <Col key={emp.id} xs={12} sm={6} md={4} lg={3}>
+                                <Card className="employee-card text-center">
                                     <Card.Body>
-                                        <Card.Title>{emp.firstName} {emp.lastName}</Card.Title>
-                                        <Card.Text>
-                                            <b>Email:</b> {emp.email} <br />
-                                            <b>Address:</b> {emp.address} <br />
-                                            <b>Phone:</b> {emp.phoneno}
-                                        </Card.Text>
-                                        <Button variant="primary" className="me-2" onClick={() => handalEdit(emp.id)}>Edit</Button>
-                                        <Button variant="danger" onClick={() => handalDelete(emp.id)}>Delete</Button>
+                                        <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${emp.firstName}`} alt="avatar" />
+                                        <h5>{emp.firstName} {emp.lastName}</h5>
+                                        <p><b>Email:</b> {emp.email}</p>
+                                        <p><b>Address:</b> {emp.address}</p>
+                                        <p><b>Phone:</b> {emp.phoneno}</p>
+                                        <div className="d-flex justify-content-center gap-3 mt-3">
+                                            <Button variant="outline-light" onClick={() => handalEdit(emp.id)}>Edit</Button>
+                                            <Button variant="outline-danger" onClick={() => handalDelete(emp.id)}>Delete</Button>
+                                        </div>
                                     </Card.Body>
                                 </Card>
                             </Col>
                         ))
                     ) : (
-                        <p className="text-center text-muted">No employees found</p>
+                        <p className="text-center text-light">No employees found</p>
                     )}
                 </Row>
-            </div>
+            </Container>
         </>
-    )
+    );
 }
 
 export default Employee;
