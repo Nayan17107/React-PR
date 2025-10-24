@@ -19,9 +19,17 @@
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .employee-bg {
@@ -84,13 +92,13 @@
 }
 
 .employee-display-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
     padding: 20px;
 }
 
 .employee-card {
+    width: 100%;
+    margin: 0 auto;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 204, 128, 0.35));
     border-radius: 20px;
     border: 1px solid rgba(255, 230, 150, 0.6);

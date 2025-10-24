@@ -155,20 +155,23 @@ function Employee() {
                     </Form>
                 </div>
 
-                <Row className="mt-5 employee-display-container">
+                <Row className="g-4 justify-content-center m-4">
                     {storage.length > 0 ? (
                         storage.map((emp) => (
                             <Col key={emp.id} xs={12} sm={6} md={4} lg={3}>
-                                <Card className="employee-card text-center">
+                                <Card className="employee-card text-center h-100">
                                     <Card.Body>
-                                        <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${emp.firstName}`} alt="avatar" />
+                                        <img
+                                            src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${emp.firstName}`}
+                                            alt="avatar"
+                                        />
                                         <h5>{emp.firstName} {emp.lastName}</h5>
                                         <p><b>Email:</b> {emp.email}</p>
                                         <p><b>Address:</b> {emp.address}</p>
                                         <p><b>Phone:</b> {emp.phoneno}</p>
                                         <div className="d-flex justify-content-center gap-3 mt-3">
-                                            <Button variant="outline-light" onClick={() => handalEdit(emp.id)}>Edit</Button>
-                                            <Button variant="outline-danger" onClick={() => handalDelete(emp.id)}>Delete</Button>
+                                            <Button variant="primary" onClick={() => handalEdit(emp.id)}>Edit</Button>
+                                            <Button variant="danger" onClick={() => handalDelete(emp.id)}>Delete</Button>
                                         </div>
                                     </Card.Body>
                                 </Card>
