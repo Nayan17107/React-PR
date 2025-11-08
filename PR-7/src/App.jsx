@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import AddMovie from "./components/AddMovie";
-import Movies from "./components/Movies";
+import AddMovie from "./Components/Add-Movie";
+import Movies from "./Components/Movies";
 import './index.css';
 
 function App() {

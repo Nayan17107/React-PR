@@ -1,0 +1,129 @@
+.add-movie-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff9e6, #fef8d9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.add-movie-card {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    border: none !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.add-movie-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+}
+
+.add-movie-card h2 {
+    color: #222 !important;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
+}
+
+.add-movie-container .form-control {
+    background-color: #fffdf5 !important;
+    border: 1.5px solid #ddd !important;
+    border-radius: 10px !important;
+    color: #333 !important;
+    transition: all 0.3s ease !important;
+}
+
+.add-movie-container .form-control:focus {
+    border-color: #ffc107 !important;
+    box-shadow: 0 0 10px #ffe58a !important;
+}
+
+.add-movie-container .invalid {
+    border-color: #ff4b5c !important;
+    background-color: #ffe6e6 !important;
+}
+
+.invalid::placeholder {
+    color: #e63946 !important;
+    opacity: 0.8;
+}
+
+.lang-btn {
+    border-radius: 25px !important;
+    border: 2px solid #ffc107 !important;
+    background: white !important;
+    color: #ffc107 !important;
+    font-weight: 500;
+    transition: all 0.3s ease !important;
+}
+
+.lang-btn:hover {
+    background: #ffc107 !important;
+    color: #000 !important;
+    transform: scale(1.08);
+}
+
+.lang-btn.btn-primary {
+    background: #ffc107 !important;
+    color: #000 !important;
+    border: none !important;
+}
+
+.preview-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.preview-img {
+    width: 90px;
+    height: 110px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #ffc107;
+    transition: all 0.3s ease;
+}
+
+.preview-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+.add-btn {
+    background: linear-gradient(90deg, #ffc107, #ffdb58);
+    border: none;
+    color: #000;
+    border-radius: 25px;
+    padding: 10px 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 193, 7, 0.5);
+}
+
+@media (max-width: 768px) {
+    .add-movie-card {
+        padding: 25px !important;
+    }
+
+    .preview-img {
+        width: 70px;
+        height: 90px;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+}
