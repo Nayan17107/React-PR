@@ -7,7 +7,7 @@ function Movies() {
     const getMovies = () => JSON.parse(localStorage.getItem("movies")) || [];
     const [movies, setMovies] = useState(getMovies());
     const [display, setDisplay] = useState(movies);
-    // const [search, setSearch] = useState("");
+    const [search, setSearch] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,32 +20,28 @@ function Movies() {
         setMovies(updated);
     };
 
-    // const handleSearch = () => {
-    //     const filtered = movies.filter((m) =>
-    //         m.name.toLowerCase().includes(search.toLowerCase())
-    //     );
-    //     setDisplay(filtered);
-    // };
+    const handleSearch = () => {
+        const filtered = movies.filter((m) =>
+            m.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setDisplay(filtered);
+    };
 
-    // const sortAsc = () => {
-    //     const sorted = [...display].sort((a, b) =>
-    //         (a.language[0] || "").localeCompare(b.language[0] || "")
-    //     );
-    //     setDisplay(sorted);
-    // };
+    const sortAsc = () => {
+        const sorted = [...display].sort((a, b) => Number(a.rating) - Number(b.rating));
+        setDisplay(sorted);
+    };
 
-    // const sortDesc = () => {
-    //     const sorted = [...display].sort((a, b) =>
-    //         (b.language[0] || "").localeCompare(a.language[0] || "")
-    //     );
-    //     setDisplay(sorted);
-    // };
+    const sortDesc = () => {
+        const sorted = [...display].sort((a, b) => Number(b.rating) - Number(a.rating));
+        setDisplay(sorted);
+    };
 
-    // const reset = () => {
-    //     setDisplay(movies);
-    //     setSearch("");
-    // };
-    
+    const reset = () => {
+        setDisplay(movies);
+        setSearch("");
+    };
+
     const handleEdit = (movie) => {
         navigate("/add-movie", { state: { movieToEdit: movie } });
     };
@@ -54,7 +50,9 @@ function Movies() {
         <>
             <div className="movie-list-section py-5">
                 <Container>
-                    {/* <h2 className="text-center fw-bold mb-5 title-glow">🎬 All Movies</h2>
+                    <h2 className="text-center text-danger">Saerching - Only By Movie Name</h2>
+                    <h2 className="text-center text-danger">Shorting - Only By Rating</h2><hr/>
+                    <h2 className="text-center fw-bold mb-5 title-glow">🎬 All Movies</h2>
 
                     <div className="text-center mb-5">
                         <InputGroup className="search-bar mx-auto" style={{ maxWidth: "400px" }}>
@@ -72,10 +70,10 @@ function Movies() {
 
                         <div className="mt-3">
                             <Button onClick={sortAsc} className="filter-btn btn-warning">
-                                Lang ↑
+                                Rating in Ascending ↑
                             </Button>{" "}
                             <Button onClick={sortDesc} className="filter-btn btn-warning">
-                                Lang ↓
+                                Rating in Descending ↓
                             </Button>{" "}
                             <Button onClick={reset} className="filter-btn btn-warning reset">
                                 Show All
@@ -90,7 +88,7 @@ function Movies() {
                                 🧹 Clear Changes
                             </Button>
                         </div>
-                    </div> */}
+                    </div>
 
                     <Row>
                         {display.length === 0 ? (
