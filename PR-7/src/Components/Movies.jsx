@@ -51,7 +51,7 @@ function Movies() {
             <div className="movie-list-section py-5">
                 <Container>
                     <h2 className="text-center text-danger">Saerching - Only By Movie Name</h2>
-                    <h2 className="text-center text-danger">Shorting - Only By Rating</h2><hr/>
+                    <h2 className="text-center text-danger">Shorting - Only By Rating</h2><hr />
                     <h2 className="text-center fw-bold mb-5 title-glow">🎬 All Movies</h2>
 
                     <div className="text-center mb-5">
@@ -115,7 +115,7 @@ function Movies() {
                                                 <strong>⭐ Rating:</strong> {movie.rating}/10
                                             </Card.Text>
                                             <Card.Text>
-                                                <strong>🌐 Language:</strong> {movie.language.join(", ")}
+                                                <strong>🌐 Language:</strong> {Array.isArray(movie.language) ? movie.language.join(", ") : movie.language}
                                             </Card.Text>
                                             <Card.Text>
                                                 <strong>⏱ Runtime:</strong> {movie.runtime}
