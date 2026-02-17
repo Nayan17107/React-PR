@@ -50,8 +50,6 @@ function Movies() {
         <>
             <div className="movie-list-section py-5">
                 <Container>
-                    <h2 className="text-center text-danger">Saerching - Only By Movie Name</h2>
-                    <h2 className="text-center text-danger">Shorting - Only By Rating</h2><hr />
                     <h2 className="text-center fw-bold mb-5 title-glow">🎬 All Movies</h2>
 
                     <div className="text-center mb-5">
