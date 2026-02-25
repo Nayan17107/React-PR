@@ -14,16 +14,16 @@ import Footer from './Components/Footer';
 function App() {
     return (
         <>
-        <Header />,
-        <Banner />,
-        <Causes />,
-        <Help />,
-        <Gallary />,
-        <Events />,
-        <Team />,
-        <Review />,
-        <Blog />,
-        <Sponcer />,
+        <Header />
+        <Banner />
+        <Causes />
+        <Help />
+        <Gallary />
+        <Events />
+        <Team />
+        <Review />
+        <Blog />
+        <Sponcer />
         <Footer />
         </>
     )

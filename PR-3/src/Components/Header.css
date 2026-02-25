@@ -5,6 +5,10 @@
 .topbar ul li a, .topbar span{
 	color:#ffffff;
 }
+.topbar ul li a:hover{
+	opacity: 0.85;
+	transform: translateY(-1px);
+}
 .topbar ul:first-child li:not(:last-child){
 	margin-right:15px;
 }
@@ -17,25 +21,37 @@
 .navbar{
 	padding:30px 0;
 }
-.navbar li a:hover{
-	color: #0aaaa0;
-}
 .navbar ul li a{
 	margin:0 15px;
 	color:#000000;
-	font-weight:300;
+	font-weight:500;
+	position: relative;
 }
-.navbar nav + ul li:first-child a{
-	background-color:#0aaaa0;
-	color: #ffffff;
+.navbar nav ul li a::after{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 0;
+	height: 2px;
+	background-color: #0aaaa0;
+	transition: width 0.3s ease;
+}
+.navbar nav ul li a:hover{
+	color: #0aaaa0;
+}
+.navbar nav ul li a:hover::after{
+	width: 100%;
 }
 .navbar nav + ul li:first-child a:hover{
-	color: #000000;
-	background-color: #ffffff;
-	border: 1px solid #000000;
+	color: #ffffff;
 }
 .toggle{
 	color: #ffffff!important;
 	background-color: #0aaaa0;
 	padding:10px 15px;
+	border-radius: 4px;
+}
+.toggle:hover{
+	background-color: #07827a;
 }

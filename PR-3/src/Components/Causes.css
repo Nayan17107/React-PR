@@ -11,28 +11,32 @@
 .cause-content{
 	background-color: #f1f1f1;
 	padding: 40px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .cause-content h3{
-	font-size: 15px;
+	font-size: 19px;
 	padding-bottom: 14px;
 	text-align: center;
 }
 .cause-content p{
-	font-size: 14px;
+	font-size: 15px;
 }
 .cause-content:hover{
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+	transform: translateY(-6px);
 }
 .cause-item img{
 	display: block;
 }
 .cause-item a{
-	color: #555555;
-	border: 1px solid #555555;
+	color: #ffffff;
+	border: 1px solid #0aaaa0;
+	background-color: #0aaaa0;
 	border-radius: 3px;
 }
 .cause-item a:hover{
-	background-color: #0aaaa0;
+	background-color: #07827a;
+	border-color: #07827a;
 	color: #ffffff;
 }
 .cause-item ul{

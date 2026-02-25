@@ -4,12 +4,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #0aaaa0;
+    --primary-dark: #07827a;
+    --heading: #1b2533;
+    --text: #4d5a6b;
+    --surface: #ffffff;
+    --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto Mono';
+    font-family: var(--font-body);
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--surface);
 }
 
 a,
@@ -19,8 +31,23 @@ span {
     text-decoration: none;
 }
 
+a,
+button,
+i {
+    transition: all 0.25s ease;
+}
+
 li {
     list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 0.2px;
 }
 
 .container {
@@ -99,9 +126,21 @@ li {
 }
 
 .theme-btn {
-    padding: 10px 20px;
+    padding: 11px 22px;
     color: #ffffff;
     font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(10, 170, 160, 0.2);
+    letter-spacing: 0.3px;
+}
+
+.theme-btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(10, 170, 160, 0.25);
 }
 
 .h-100 {
@@ -124,6 +163,7 @@ li {
 .help-title h2,
 .review-title h2 {
     font-size: 40px;
+    font-weight: 700;
 }
 
 .causes-title h2>span,
@@ -131,5 +171,5 @@ li {
 .team-title h2>span,
 .blog-title h2>span,
 .sponsor-title h2>span {
-    color: #0aaaa0;
+    color: var(--primary);
 }
